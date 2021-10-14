@@ -25,7 +25,7 @@ class dfCompiler():
                 filled_dataset[entry]=faker.synthesize_strings()
             elif pd_column[0] == 'Continuous' or pd_column[0] == 'Continous':
                 #print("adding continuous dataset")
-                if pd_column[1] and type(pd_column[1]) == str:
+                if len(pd_column) > 1 and type(pd_column[1]) == str:
                     #print(f"{pd_column[1]} content for {entry}")
                     args = pd_column[1].split()
                     if len(args) == 2:
@@ -42,7 +42,7 @@ class dfCompiler():
                 else:
                     filled_dataset[entry] = faker.synthesize_continuous(self.default_mean, self.default_stdev)
             elif pd_column[0] == 'Categorical':
-                if pd_column[1] and pd_column[1] > 0:
+                if len(pd_column) > 2 and pd_column[1] > 0:
                     args = pd_column[1]
                     if args:
                         filled_dataset[entry]=faker.synthesize_boolean(args)

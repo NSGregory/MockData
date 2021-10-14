@@ -1,5 +1,3 @@
-import pandas as pd
-
 from data_reader import dataReader
 from data_faker import Faker
 from gui import selectFile
