@@ -38,9 +38,8 @@ class dataReader:
 if __name__ =='__main__':
     #skipping gui here to make development faster
     #reinstate for ease of use post development
-    #from gui import selectFile
-    #file = selectFile.byGui()
-    file="/Users/nsg/PycharmProjects/MockData/empty_dataset.xlsx"
+    from gui import selectFile
+    file = selectFile.byGui()
     data = dataReader(file)
 
 

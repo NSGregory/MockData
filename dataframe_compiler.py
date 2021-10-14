@@ -9,7 +9,7 @@ class dfCompiler():
         self.default_mean = 100
         self.default_stdev = 15
         self.default_percentage = 67
-        self.default_n = 1000
+        self.default_n = 200
         self.wkbk = wkbk
         self.filled_dataframe = self.build_random_dataset()
 
@@ -71,10 +71,9 @@ if __name__=='__main__':
 
     #skipping gui here to make development faster
     #reinstate for ease of use post development
-    #from gui import selectFile
-    #file = selectFile.byGui()
-    faker = Faker(1000)
-    file="/Users/nsg/PycharmProjects/MockData/empty_dataset.xlsx"
+    from gui import selectFile
+    file = selectFile.byGui()
+    faker = Faker(200)
     data = dataReader(file)
     wkbk = data.wkbk
 
